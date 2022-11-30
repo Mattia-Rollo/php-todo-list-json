@@ -1,12 +1,28 @@
 <?php
-$dataJson = file_get_contents('./data.json');
+$file_text = file_get_contents('./data.json');
 
 // var_dump(json_decode($dataJson));
+$file_url = "./data.json";
 
-$dataJsonEncode = json_decode($dataJson);
+$todo_list = json_decode($file_text);
 
+if (isset($_POST['newToDoText'])) {
+    // echo 'ricevuto il  messaggio';
+    $newToDo = [
+        "text" => $_POST['newToDoText'],
+        "done" => false
+    ];
+    array_push($todo_list, $newToDo);
+    print_r($todo_list);
 
-echo json_encode($dataJsonEncode);
+    file_put_contents($file_url, json_encode($todo_list));
+} else {
+    // echo 'il parametro non è arrivatio';
+    header('Content-Type: application/json');
+
+    echo json_encode($todo_list);
+}
+
 
 // $newtodo = [
 //     [
@@ -22,7 +38,7 @@ echo json_encode($dataJsonEncode);
 
 // file_put_contents('./data.json', $json_string);
 
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
 
 // echo $dataJsonEncode;

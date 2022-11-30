@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      message: "Hello Vue!",
+      newToDoText: "",
       todolist: [],
       url: "./server.php",
     };
@@ -14,6 +14,20 @@ createApp({
         console.log(res.data);
         this.todolist = res.data;
       });
+    },
+    addToDo() {
+      const data = {
+        newToDoText: this.newToDoText,
+      };
+      axios
+        .post(this.url, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((res) => {
+          console.log(res.data);
+          this.getToDo();
+          this.newToDoText = "";
+        });
     },
   },
   mounted() {
