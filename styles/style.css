@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 #app {
-    background-color: aqua;
+    background-color: rgb(230, 212, 255);
+    padding: 2.5rem;
 }
 .done {
     text-decoration: line-through;
