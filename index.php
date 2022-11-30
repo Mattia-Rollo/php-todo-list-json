@@ -20,15 +20,16 @@
 
 <body>
     <div id="app">
-        <h1 class="py-1">To Do List</h1>
-        <div class="input-group mb-3 w-25">
-            <input type="text" class="form-control" placeholder="Aggiungi To Do" v-model="newToDoText">
-            <button class="btn btn-outline-primary" type="button" @click="addToDo">Aggiungi</button>
+        <div class="container p-3">
+            <h1 class="py-1">To Do List</h1>
+            <div class="input-group mb-3    ">
+                <input type="text" class="form-control" placeholder="Aggiungi To Do" v-model="newToDoText">
+                <button class="btn btn-outline-primary" type="button" @click="addToDo">Aggiungi</button>
+            </div>
+            <ul>
+                <li v-for="(item,index) in todolist" :key="index" :class="item.done ? 'done' : ''">{{item.text}}</li>
+            </ul>
         </div>
-        <ul>
-            <li v-for="(item,index) in todolist" :key="index" :class="item.done ? 'done' : ''">{{item.text}}</li>
-        </ul>
-
 
     </div>
 

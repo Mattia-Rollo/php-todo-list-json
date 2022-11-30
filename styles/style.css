@@ -4,10 +4,16 @@
     box-sizing: border-box;
 }
 #app {
-    background-color: rgb(230, 212, 255);
+    /* background-color: rgb(230, 212, 255); */
     padding: 2.5rem;
 }
 .done {
     text-decoration: line-through;
     color: red;
+}
+.container {
+    max-width: 600px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: rgb(139, 231, 134);
 }
