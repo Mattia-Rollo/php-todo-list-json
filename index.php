@@ -17,7 +17,8 @@
 
 <body>
     <div id="app">
-        <div @click="getToDo">{{message}}</div>
+        <div v-for="(item,index) in todolist" :key="index" :class="item.done ? 'done' : ''">{{item.text}}</div>
+
     </div>
 
     <script src="./script/script.js"></script>
