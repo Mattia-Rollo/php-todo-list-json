@@ -1,6 +1,26 @@
 <?php
-$comics = file_get_contents('data.json');
-$comics = json_decode($comics, true);
 header('Content-Type: application/json');
+$dataJson = file_get_contents('./data.json');
 
-echo json_encode($comics, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+$dataJsonEncode = json_encode($dataJson);
+
+// var_dump($dataJsonEncode);
+
+$newtodo = [
+    [
+        "text" => "React",
+        "done" => "false",
+    ]
+];
+
+$json_string = json_encode($newtodo);
+
+// var_dump(json_decode($dataJsonEncode));
+
+
+// file_put_contents('./data.json', $json_string);
+
+
+
+echo json_decode($dataJsonEncode);
+?>
