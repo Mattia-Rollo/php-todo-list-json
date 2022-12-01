@@ -29,6 +29,11 @@ createApp({
           this.newToDoText = "";
         });
     },
+    deleteTask(i) {
+      //chiamoaxios
+      //gli passo un oggetto data con l'indice
+      //l'indice lo utilizzerà nell'array per eliminare il Task
+    },
   },
   mounted() {
     this.getToDo();

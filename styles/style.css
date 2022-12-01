@@ -7,6 +7,9 @@
     /* background-color: rgb(230, 212, 255); */
     padding: 2.5rem;
 }
+body{
+    font-size: 1.2rem;
+}
 .done {
     text-decoration: line-through;
     color: red;
@@ -16,4 +19,8 @@
     border-radius: 10px;
     margin: 0 auto;
     background-color: rgb(139, 231, 134);
+}
+i:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 }
