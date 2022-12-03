@@ -33,7 +33,7 @@
             <ul>
                 <li v-for="(item,index) in todolist" :key="index" :class="item.done ? 'done' : ''">
                     <div class="d-flex justify-content-between">
-                        <span @click="toggleDoneTask(index)">{{item.text}}</span>
+                        <span class="task" @click="toggleDoneTask(index)">{{item.text}}</span>
                         <span class=""><i class="fa-solid fa-trash" @click="deleteTask(index)"></i></span>
                     </div>
                 </li>
