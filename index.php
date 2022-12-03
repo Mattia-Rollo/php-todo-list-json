@@ -26,14 +26,14 @@
     <div id="app">
         <div class="container p-3">
             <h1 class="py-2 text-center">To Do List</h1>
-            <div class="input-group mb-3    ">
+            <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Aggiungi To Do" v-model="newToDoText">
                 <button class="btn btn-outline-primary" type="button" @click="addToDo">Aggiungi</button>
             </div>
             <ul>
                 <li v-for="(item,index) in todolist" :key="index" :class="item.done ? 'done' : ''">
                     <div class="d-flex justify-content-between">
-                        <span>{{item.text}}</span>
+                        <span @click="toggleDoneTask(index)">{{item.text}}</span>
                         <span class=""><i class="fa-solid fa-trash" @click="deleteTask(index)"></i></span>
                     </div>
                 </li>
