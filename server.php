@@ -16,6 +16,12 @@ if (isset($_POST['newToDoText'])) {
     print_r($todo_list);
 
     file_put_contents($file_url, json_encode($todo_list));
+} else if (isset($_POST['index'])) {
+
+    array_splice($todo_list, $_POST['index'], 1);
+    print_r($todo_list);
+    file_put_contents($file_url, json_encode($todo_list));
+
 } else {
     // echo 'il parametro non è arrivatio';
     header('Content-Type: application/json');
