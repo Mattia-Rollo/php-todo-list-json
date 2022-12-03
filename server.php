@@ -25,7 +25,7 @@ if (isset($_POST['newToDoText'])) {
 } else if (isset($_POST['toggleToDo'])) {
 
     print_r($_POST['toggleToDo']);
-    if ($todo_list[$_POST['toggleToDo']]->done == '') {
+    if ($todo_list[$_POST['toggleToDo']]->done == false) {
         $todo_list[$_POST['toggleToDo']]->done = true;
         file_put_contents($file_url, json_encode($todo_list));
     } else {
