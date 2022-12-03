@@ -25,7 +25,8 @@ createApp({
         })
         .then((res) => {
           console.log(res.data);
-          this.getToDo();
+          // this.getToDo();
+          this.todolist = res.data;
           this.newToDoText = "";
         });
     },
@@ -39,7 +40,8 @@ createApp({
         })
         .then((res) => {
           console.log(res.data);
-          this.getToDo();
+          // this.getToDo();
+          this.todolist = res.data;
         });
       //chiamoaxios
       //gli passo un oggetto data con l'indice
@@ -55,7 +57,8 @@ createApp({
         })
         .then((res) => {
           console.log(res.data);
-          this.getToDo();
+          // this.getToDo();
+          this.todolist = res.data;
         });
     },
   },
