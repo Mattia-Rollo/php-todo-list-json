@@ -1,4 +1,5 @@
 <?php
+
 $file_text = file_get_contents('./data.json');
 
 // var_dump(json_decode($dataJson));
